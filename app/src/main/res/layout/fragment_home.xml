@@ -12,18 +12,33 @@
         android:layout_weight="1"
         android:orientation="horizontal"
         android:background="@drawable/gradient">
+
         <ImageView
             android:id="@+id/iv_logo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="77dp"
+            android:layout_height="77dp"
             android:src="@drawable/logo"
-            />
+            android:layout_gravity="center"
+            android:layout_marginStart="55dp"
+            android:scaleType="centerCrop"
+            android:layout_marginTop="12dp"/>
+
         <TextView
             android:id="@+id/tv_bookName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/pyton"
-            android:textStyle="bold"/>
+            android:textColor="@color/white"
+            android:layout_gravity="center"
+            android:fontFamily="@font/sfns_display_bold"
+            android:textSize="28sp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="15dp"
+            android:shadowColor="@color/gray"
+            android:shadowRadius="3"
+            android:shadowDx="0"
+            android:shadowDy="8"/>
+
     </LinearLayout>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_list"
