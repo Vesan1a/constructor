@@ -6,6 +6,7 @@
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fc_main"
+        android:name="com.example.constructor.fragment.HomeFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
