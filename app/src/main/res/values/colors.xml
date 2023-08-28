@@ -2,11 +2,12 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFF</color>
-    <color name="mint">#8fc0c9</color>
-    <color name="mint2">#94BFC6</color>
-    <color name="blue">#028394</color>
+    <color name="mint">#9FC3CA</color>
+    <color name="mint2">#F363D8EA</color>
     <color name="gray_shadow">#C8777777</color>
     <color name="gray_text">#666666</color>
-    <color name="pink">#f3c6c8</color>
+    <color name="pink">#F1D0D2</color>
     <color name="none">#00FFFEFE</color>
+    <color name="blue">#F36C9EF7</color>
+    <color name="whiteTransparent">#5EFFFFFF</color>
 </resources>

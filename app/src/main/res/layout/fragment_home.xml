@@ -9,8 +9,8 @@
         android:id="@+id/ll_h"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
-        android:background="@drawable/gradient_color"
+        android:layout_weight="1.5"
+        android:background="@drawable/gradient_color2"
         android:orientation="horizontal">
 
         <ImageView
@@ -38,5 +38,6 @@
         android:layout_height="0dp"
         android:layout_weight="6"
         tools:listitem="@layout/item_chapter"/>
+
 
 </LinearLayout>
