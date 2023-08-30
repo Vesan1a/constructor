@@ -4,10 +4,10 @@
     <color name="white">#FFFFFF</color>
     <color name="mint">#9FC3CA</color>
     <color name="mint2">#F363D8EA</color>
-    <color name="gray_shadow">#C8777777</color>
+    <color name="gray_shadow">#37B5B5B5</color>
     <color name="gray_text">#666666</color>
     <color name="pink">#F1D0D2</color>
     <color name="none">#00FFFEFE</color>
-    <color name="blue">#F36C9EF7</color>
+    <color name="blue">#CE55BCEE</color>
     <color name="whiteTransparent">#5EFFFFFF</color>
 </resources>
