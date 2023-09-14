@@ -2,8 +2,41 @@ package com.example.constructor.model;
 
 public class Chapter {
     private int id;
-    private int number;
-    private String title;
-    private Test test;
+    private String name;
     private ContentChapter content;
+    private Test test;
+    private boolean accepted;
+
+
+    public Chapter(int id, String name, ContentChapter content, Test test, boolean accepted) {
+        this.id = id;
+        this.name = name;
+        this.content = content;
+        this.test = test;
+        this.accepted = accepted;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public ContentChapter getContent() {
+        return content;
+    }
+
+    public Test getTest() {
+        return test;
+    }
+
+    public boolean isAccepted() {
+        return accepted;
+    }
+
+    public void setAccepted(boolean accepted) {
+        this.accepted = accepted;
+    }
 }
