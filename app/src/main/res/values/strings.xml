@@ -2,4 +2,8 @@
     <string name="app_name">constructor</string>
     <string name="pyton">МАТЕМАТИКА\nНА PYTON</string>
     <string name="name_1">1. Название главы 1</string>
+    <string name="startTest">ПРОЙТИ ТЕСТ</string>
+    <string name="testRepeat">ПРОЙТИ ТЕСТ ПОВТОРНО</string>
+    <string name="complete">ЗАВЕРШИТЬ</string>
+    <string name="acceptAnswer">ПРИНЯТЬ ОТВЕТ</string>
 </resources>

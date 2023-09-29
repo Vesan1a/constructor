@@ -6,10 +6,9 @@
 
     <CheckBox
         android:id="@+id/cb_answer"
-        android:layout_width="36dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="12dp" />
+        android:layout_gravity="center"/>
 
     <TextView
         android:id="@+id/tv_answer_name"

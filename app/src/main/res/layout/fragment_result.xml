@@ -59,7 +59,7 @@
         android:layout_marginTop="20dp"
         app:backgroundTintMode="screen"
         android:background="@drawable/gradient_color2"
-        android:text="ПРОЙТИ ТЕСТ ПОВТОРНО" />
+        android:text="@string/testRepeat" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_complete"
@@ -70,7 +70,7 @@
         android:layout_marginTop="40dp"
         app:backgroundTintMode="screen"
         android:background="@drawable/gradient_color2"
-        android:text="ЗАВЕРШИТЬ" />
+        android:text="@string/complete" />
 
 
 </LinearLayout>
