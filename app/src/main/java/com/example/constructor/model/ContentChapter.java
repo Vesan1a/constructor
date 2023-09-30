@@ -8,13 +8,15 @@ public class ContentChapter {
     private String content;
     private List<String> imageUrlList;
     private List<String> linkUrlList;
+    private int chapter_id;
 
-    public ContentChapter(int id, String name, String content, List<String> imageUrlList, List<String> linkUrlList) {
+    public ContentChapter(int id, String name, String content, List<String> imageUrlList, List<String> linkUrlList, int chapter_id) {
         this.id = id;
         this.name = name;
         this.content = content;
         this.imageUrlList = imageUrlList;
         this.linkUrlList = linkUrlList;
+        this.chapter_id = chapter_id;
     }
 
     public int getId() {
@@ -35,5 +37,9 @@ public class ContentChapter {
 
     public List<String> getLinkUrlList() {
         return linkUrlList;
+    }
+
+    public int getChapter_id() {
+        return chapter_id;
     }
 }
