@@ -18,15 +18,15 @@
             android:layout_margin="22dp">
 
             <TextView
-                android:id="@+id/tv_chapter_title"
+                android:id="@+id/tv_chapterTitle"
                 style="@style/ts_chapterTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="@string/name_1" />
+                android:text="@string/name_1"/>
 
             <ImageView
-                android:id="@+id/iv_title_line"
+                android:id="@+id/iv_chapter_bottomLine"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
