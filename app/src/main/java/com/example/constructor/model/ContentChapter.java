@@ -19,6 +19,14 @@ public class ContentChapter {
         this.chapter_id = chapter_id;
     }
 
+    public ContentChapter(String name, String content, List<String> imageUrlList, List<String> linkUrlList, int chapter_id) {
+        this.name = name;
+        this.content = content;
+        this.imageUrlList = imageUrlList;
+        this.linkUrlList = linkUrlList;
+        this.chapter_id = chapter_id;
+    }
+
     public int getId() {
         return id;
     }

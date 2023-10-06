@@ -11,6 +11,11 @@ public class LinkUrl {
         this.contentChapter_id = contentChapter_id;
     }
 
+    public LinkUrl(String url, int contentChapter_id) {
+        this.url = url;
+        this.contentChapter_id = contentChapter_id;
+    }
+
     public int getId() {
         return id;
     }

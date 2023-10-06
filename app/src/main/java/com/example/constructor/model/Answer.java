@@ -13,6 +13,12 @@ public class Answer {
         this.isRight = isRight;
     }
 
+    public Answer(String name, int question_id, boolean isRight) {
+        this.name = name;
+        this.question_id = question_id;
+        this.isRight = isRight;
+    }
+
     public int getId() {
         return id;
     }

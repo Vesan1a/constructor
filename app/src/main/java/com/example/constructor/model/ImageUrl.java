@@ -11,6 +11,11 @@ public class ImageUrl {
         this.contentChapter_Id = contentChapter_Id;
     }
 
+    public ImageUrl(String url, int contentChapter_Id) {
+        this.url = url;
+        this.contentChapter_Id = contentChapter_Id;
+    }
+
     public int getId() {
         return id;
     }

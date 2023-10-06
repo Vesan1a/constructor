@@ -17,6 +17,13 @@ public class Test {
         this.isDone = isDone;
     }
 
+    public Test(String name, int chapter_id, List<Question> questionList, boolean isDone) {
+        this.name = name;
+        this.chapter_id = chapter_id;
+        this.questionList = questionList;
+        this.isDone = isDone;
+    }
+
     public int getId() {
         return id;
     }

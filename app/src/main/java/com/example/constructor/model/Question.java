@@ -15,6 +15,12 @@ public class Question {
         this.answerList = answerList;
     }
 
+    public Question(int name, int test_id, List<Answer> answerList) {
+        this.name = name;
+        this.test_id = test_id;
+        this.answerList = answerList;
+    }
+
     public int getId() {
         return id;
     }

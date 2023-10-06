@@ -16,6 +16,13 @@ public class Chapter {
         this.accepted = accepted;
     }
 
+    public Chapter(String name, ContentChapter content, Test test, boolean accepted) {
+        this.name = name;
+        this.content = content;
+        this.test = test;
+        this.accepted = accepted;
+    }
+
     public int getId() {
         return id;
     }
