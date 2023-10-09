@@ -6,4 +6,5 @@ import java.util.List;
 
 public interface ImageUrlReader {
     List<ImageUrl> findAll();
+    List<ImageUrl> findByContentChapterId(long id);
 }

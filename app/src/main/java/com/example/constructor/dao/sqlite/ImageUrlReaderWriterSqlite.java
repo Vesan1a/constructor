@@ -2,13 +2,18 @@ package com.example.constructor.dao.sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+
+import androidx.annotation.NonNull;
 
 import com.example.constructor.dao.ImageUrlReaderWriter;
 import com.example.constructor.db.ConstructorDbOpenHelper;
 import com.example.constructor.db.ConstructorReaderContract;
+import com.example.constructor.model.Answer;
 import com.example.constructor.model.ImageUrl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ImageUrlReaderWriterSqlite implements ImageUrlReaderWriter {
@@ -42,6 +47,73 @@ public class ImageUrlReaderWriterSqlite implements ImageUrlReaderWriter {
 
     @Override
     public List<ImageUrl> findAll() {
-        return null;
+
+        SQLiteDatabase readableDatabase = openHelper.getReadableDatabase();
+
+        Cursor cursor = readableDatabase.query(
+                ConstructorReaderContract.ImageUrlEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        List<ImageUrl> imageUrlList = getImageUrlsList(cursor);
+
+        cursor.close();
+        readableDatabase.close();
+        return imageUrlList;
+    }
+
+    @Override
+    public List<ImageUrl> findByContentChapterId(long id) {
+
+        SQLiteDatabase readableDatabase = openHelper.getReadableDatabase();
+
+        Cursor cursor = readableDatabase.query(
+                ConstructorReaderContract.ImageUrlEntry.TABLE_NAME,
+                null,
+                ConstructorReaderContract.ImageUrlEntry.COLUMN_CONTENT_CHAPTER_ID + " = ?",
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null
+        );
+
+        List<ImageUrl> imageUrlList = getImageUrlsList(cursor);
+
+        cursor.close();
+        readableDatabase.close();
+        return imageUrlList;
+    }
+
+    @NonNull
+    private static List<ImageUrl> getImageUrlsList(Cursor cursor) {
+        List<ImageUrl> imageUrlList = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            int columnIndexId = cursor.
+                    getColumnIndex(ConstructorReaderContract.ImageUrlEntry.COLUM_ID);
+            int columnIndexUrl = cursor.
+                    getColumnIndex(ConstructorReaderContract.ImageUrlEntry.COLUMN_Url);
+            int columnIndexContentChapterId = cursor.
+                    getColumnIndex(ConstructorReaderContract.ImageUrlEntry.COLUMN_CONTENT_CHAPTER_ID);
+
+            do {
+
+                ImageUrl imageUrl = new ImageUrl(
+                        cursor.getLong(columnIndexId),
+                        cursor.getString(columnIndexUrl),
+                        cursor.getInt(columnIndexContentChapterId)
+                );
+
+                imageUrlList.add(imageUrl);
+            } while (cursor.moveToNext());
+
+        }
+        return imageUrlList;
     }
 }

@@ -2,21 +2,29 @@ package com.example.constructor.dao.sqlite;
 
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
+import androidx.annotation.NonNull;
+
+import com.example.constructor.dao.QuestionReaderWriter;
 import com.example.constructor.dao.TestReaderWriter;
 import com.example.constructor.db.ConstructorDbOpenHelper;
 import com.example.constructor.db.ConstructorReaderContract;
+import com.example.constructor.model.ContentChapter;
 import com.example.constructor.model.Test;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestReaderWriterSqlite implements TestReaderWriter {
 
     private final ConstructorDbOpenHelper openHelper;
+    private final QuestionReaderWriter questionReaderWriter;
 
     public TestReaderWriterSqlite(Context context) {
         this.openHelper = new ConstructorDbOpenHelper(context);
+        questionReaderWriter = new QuestionReaderWriterSqlite(context);
     }
 
     @Override
@@ -44,11 +52,84 @@ public class TestReaderWriterSqlite implements TestReaderWriter {
 
     @Override
     public List<Test> findAll() {
-        return null;
+        SQLiteDatabase readableDatabase = openHelper.getReadableDatabase();
+
+        Cursor cursor = readableDatabase.query(
+                ConstructorReaderContract.TestEntry.TABLE_NAME,
+                null,
+                null,
+                null,
+                null,
+                null,
+                null
+        );
+
+        List<Test> testList = getTestList(cursor);
+
+        cursor.close();
+        readableDatabase.close();
+        return testList;
     }
 
     @Override
-    public void update(int id, boolean done) {
+    public List<Test> findByChapterId(long id) {
+        SQLiteDatabase readableDatabase = openHelper.getReadableDatabase();
+
+        Cursor cursor = readableDatabase.query(
+                ConstructorReaderContract.TestEntry.TABLE_NAME,
+                null,
+                ConstructorReaderContract.TestEntry.COLUMN_CHAPTER_ID + " = ?",
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null
+        );
+
+        List<Test> testList = getTestList(cursor);
+
+        cursor.close();
+        readableDatabase.close();
+        return testList;
+    }
+
+    @NonNull
+    private List<Test> getTestList(Cursor cursor) {
+        List<Test> testList = new ArrayList<>();
+
+        if (cursor.moveToFirst()) {
+
+            int columnIndexId = cursor.
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUM_ID);
+            int columnIndexName = cursor.
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_NAME);
+            int columnIndexChapterId = cursor.
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_CHAPTER_ID);
+            int columnIndexIsDone = cursor.
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_IS_DONE);
+
+            do {
+
+                long testId = cursor.getLong(columnIndexId);
+                Test test = new Test(
+                        testId,
+                        cursor.getString(columnIndexName),
+                        cursor.getLong(columnIndexChapterId),
+                        questionReaderWriter.findByTestId(testId),
+                        cursor.getInt(columnIndexIsDone) == 1
+                );
+
+                testList.add(test);
+            } while (cursor.moveToNext());
+
+        }
+        return testList;
+    }
+
+    @Override
+    public void update(long id, boolean done) {
 
     }
+
+
+
 }

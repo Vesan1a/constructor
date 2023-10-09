@@ -6,6 +6,6 @@ public interface ChapterReaderWriter extends ChapterReader{
 
     long insert (Chapter chapter);
 
-    void update (int id, boolean accepted);
+    void update (long id, boolean accepted);
 
 }

@@ -1,25 +1,25 @@
 package com.example.constructor.model;
 
 public class Answer {
-    private int id;
+    private long id;
     private String name;
-    private int question_id;
+    private long question_id;
     private boolean isRight;
 
-    public Answer(int id, String name, int question_id, boolean isRight) {
+    public Answer(long id, String name, long question_id, boolean isRight) {
         this.id = id;
         this.name = name;
         this.question_id = question_id;
         this.isRight = isRight;
     }
 
-    public Answer(String name, int question_id, boolean isRight) {
+    public Answer(String name, long question_id, boolean isRight) {
         this.name = name;
         this.question_id = question_id;
         this.isRight = isRight;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -27,7 +27,7 @@ public class Answer {
         return name;
     }
 
-    public int getQuestion_id() {
+    public long getQuestion_id() {
         return question_id;
     }
 

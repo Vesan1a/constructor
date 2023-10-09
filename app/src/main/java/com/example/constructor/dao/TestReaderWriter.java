@@ -6,5 +6,5 @@ public interface TestReaderWriter extends TestReader {
 
     long insert(Test test);
 
-    void update(int id, boolean done);
+    void update(long id, boolean done);
 }

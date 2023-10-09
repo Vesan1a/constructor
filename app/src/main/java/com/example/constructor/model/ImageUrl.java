@@ -1,11 +1,11 @@
 package com.example.constructor.model;
 
 public class ImageUrl {
-    private int id;
+    private long id;
     private String url;
-    private int contentChapter_Id;
+    private long contentChapter_Id;
 
-    public ImageUrl(int id, String url, int contentChapter_Id) {
+    public ImageUrl(long id, String url, long contentChapter_Id) {
         this.id = id;
         this.url = url;
         this.contentChapter_Id = contentChapter_Id;
@@ -16,7 +16,7 @@ public class ImageUrl {
         this.contentChapter_Id = contentChapter_Id;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -24,7 +24,7 @@ public class ImageUrl {
         return url;
     }
 
-    public int getContentChapter_Id() {
+    public long getContentChapter_Id() {
         return contentChapter_Id;
     }
 }

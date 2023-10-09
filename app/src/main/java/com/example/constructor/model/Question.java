@@ -3,33 +3,33 @@ package com.example.constructor.model;
 import java.util.List;
 
 public class Question {
-    private int id;
-    private int name;
-    private int test_id;
+    private long id;
+    private String name;
+    private long test_id;
     private List<Answer> answerList;
 
-    public Question(int id, int name, int test_id, List<Answer> answerList) {
+    public Question(long id, String name, long test_id, List<Answer> answerList) {
         this.id = id;
         this.name = name;
         this.test_id = test_id;
         this.answerList = answerList;
     }
 
-    public Question(int name, int test_id, List<Answer> answerList) {
+    public Question(String name, long test_id, List<Answer> answerList) {
         this.name = name;
         this.test_id = test_id;
         this.answerList = answerList;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public int getName() {
+    public String getName() {
         return name;
     }
 
-    public int getTest_id() {
+    public long getTest_id() {
         return test_id;
     }
 

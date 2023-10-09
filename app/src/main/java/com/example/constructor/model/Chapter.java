@@ -1,14 +1,14 @@
 package com.example.constructor.model;
 
 public class Chapter {
-    private int id;
+    private long id;
     private String name;
     private ContentChapter content;
     private Test test;
     private boolean accepted;
 
 
-    public Chapter(int id, String name, ContentChapter content, Test test, boolean accepted) {
+    public Chapter(long id, String name, ContentChapter content, Test test, boolean accepted) {
         this.id = id;
         this.name = name;
         this.content = content;
@@ -23,7 +23,7 @@ public class Chapter {
         this.accepted = accepted;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
