@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface TestReader {
     List<Test> findAll();
-    List<Test> findByChapterId(long id);
+    Test findByChapterId(long id) throws Exception;
 }

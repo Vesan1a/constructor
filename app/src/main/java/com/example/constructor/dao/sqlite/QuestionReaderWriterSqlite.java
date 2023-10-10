@@ -11,7 +11,6 @@ import com.example.constructor.dao.AnswerReaderWriter;
 import com.example.constructor.dao.QuestionReaderWriter;
 import com.example.constructor.db.ConstructorDbOpenHelper;
 import com.example.constructor.db.ConstructorReaderContract;
-import com.example.constructor.model.ContentChapter;
 import com.example.constructor.model.Question;
 
 import java.util.ArrayList;
@@ -96,7 +95,7 @@ public class QuestionReaderWriterSqlite implements QuestionReaderWriter {
         if (cursor.moveToFirst()) {
 
             int columnIndexId = cursor.
-                    getColumnIndex(ConstructorReaderContract.QuestionEntry.COLUM_ID);
+                    getColumnIndex(ConstructorReaderContract.QuestionEntry.COLUMN_ID);
             int columnIndexName = cursor.
                     getColumnIndex(ConstructorReaderContract.QuestionEntry.COLUMN_NAME);
             int columnIndexTestId = cursor.

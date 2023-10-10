@@ -13,7 +13,6 @@ import com.example.constructor.db.ConstructorReaderContract;
 import com.example.constructor.model.Answer;
 
 import java.util.ArrayList;
-import java.util.LinkedList;
 import java.util.List;
 
 public class AnswerReaderWriterSqlite implements AnswerReaderWriter {
@@ -100,7 +99,7 @@ public class AnswerReaderWriterSqlite implements AnswerReaderWriter {
         if (cursor.moveToFirst()) {
 
             int columnIndexId = cursor.
-                    getColumnIndex(ConstructorReaderContract.AnswerEntry.COLUM_ID);
+                    getColumnIndex(ConstructorReaderContract.AnswerEntry.COLUMN_ID);
             int columnIndexName = cursor.
                     getColumnIndex(ConstructorReaderContract.AnswerEntry.COLUMN_NAME);
             int columnIndexRight = cursor.

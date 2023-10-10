@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import com.example.constructor.dao.LinkUrlReaderWriter;
 import com.example.constructor.db.ConstructorDbOpenHelper;
 import com.example.constructor.db.ConstructorReaderContract;
-import com.example.constructor.model.ImageUrl;
 import com.example.constructor.model.LinkUrl;
 
 import java.util.ArrayList;
@@ -95,7 +94,7 @@ public class LinkUrlReaderWriterSqlite implements LinkUrlReaderWriter {
         if (cursor.moveToFirst()) {
 
             int columnIndexId = cursor.
-                    getColumnIndex(ConstructorReaderContract.LinkUrlEntry.COLUM_ID);
+                    getColumnIndex(ConstructorReaderContract.LinkUrlEntry.COLUMN_ID);
             int columnIndexUrl = cursor.
                     getColumnIndex(ConstructorReaderContract.LinkUrlEntry.COLUMN_Url);
             int columnIndexContentChapterId = cursor.

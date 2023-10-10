@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface ContentChapterReader {
     List<ContentChapter> findAll();
-    List<ContentChapter> findByChapterId(long id);
+    ContentChapter findByChapterId(long id) throws Exception;
 }

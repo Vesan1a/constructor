@@ -10,7 +10,6 @@ import androidx.annotation.NonNull;
 import com.example.constructor.dao.ImageUrlReaderWriter;
 import com.example.constructor.db.ConstructorDbOpenHelper;
 import com.example.constructor.db.ConstructorReaderContract;
-import com.example.constructor.model.Answer;
 import com.example.constructor.model.ImageUrl;
 
 import java.util.ArrayList;
@@ -96,7 +95,7 @@ public class ImageUrlReaderWriterSqlite implements ImageUrlReaderWriter {
         if (cursor.moveToFirst()) {
 
             int columnIndexId = cursor.
-                    getColumnIndex(ConstructorReaderContract.ImageUrlEntry.COLUM_ID);
+                    getColumnIndex(ConstructorReaderContract.ImageUrlEntry.COLUMN_ID);
             int columnIndexUrl = cursor.
                     getColumnIndex(ConstructorReaderContract.ImageUrlEntry.COLUMN_Url);
             int columnIndexContentChapterId = cursor.

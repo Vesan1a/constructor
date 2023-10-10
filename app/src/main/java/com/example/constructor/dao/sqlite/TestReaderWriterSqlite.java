@@ -64,42 +64,12 @@ public class TestReaderWriterSqlite implements TestReaderWriter {
                 null
         );
 
-        List<Test> testList = getTestList(cursor);
-
-        cursor.close();
-        readableDatabase.close();
-        return testList;
-    }
-
-    @Override
-    public List<Test> findByChapterId(long id) {
-        SQLiteDatabase readableDatabase = openHelper.getReadableDatabase();
-
-        Cursor cursor = readableDatabase.query(
-                ConstructorReaderContract.TestEntry.TABLE_NAME,
-                null,
-                ConstructorReaderContract.TestEntry.COLUMN_CHAPTER_ID + " = ?",
-                new String[]{String.valueOf(id)},
-                null,
-                null,
-                null
-        );
-
-        List<Test> testList = getTestList(cursor);
-
-        cursor.close();
-        readableDatabase.close();
-        return testList;
-    }
-
-    @NonNull
-    private List<Test> getTestList(Cursor cursor) {
         List<Test> testList = new ArrayList<>();
 
         if (cursor.moveToFirst()) {
 
             int columnIndexId = cursor.
-                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUM_ID);
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_ID);
             int columnIndexName = cursor.
                     getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_NAME);
             int columnIndexChapterId = cursor.
@@ -122,11 +92,71 @@ public class TestReaderWriterSqlite implements TestReaderWriter {
             } while (cursor.moveToNext());
 
         }
+
+        cursor.close();
+        readableDatabase.close();
         return testList;
     }
 
     @Override
+    public Test findByChapterId(long id) throws Exception {
+        SQLiteDatabase readableDatabase = openHelper.getReadableDatabase();
+
+        Cursor cursor = readableDatabase.query(
+                ConstructorReaderContract.TestEntry.TABLE_NAME,
+                null,
+                ConstructorReaderContract.TestEntry.COLUMN_CHAPTER_ID + " = ?",
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null
+        );
+
+        Test test = null;
+        if (cursor.moveToFirst()) {
+
+            int columnIndexId = cursor.
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_ID);
+            int columnIndexName = cursor.
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_NAME);
+            int columnIndexChapterId = cursor.
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_CHAPTER_ID);
+            int columnIndexIsDone = cursor.
+                    getColumnIndex(ConstructorReaderContract.TestEntry.COLUMN_IS_DONE);
+
+
+            long testID = cursor.getLong(columnIndexId);
+            test = new Test(
+                    testID,
+                    cursor.getString(columnIndexName),
+                    cursor.getLong(columnIndexChapterId),
+                    questionReaderWriter.findByTestId(testID),
+                    cursor.getInt(columnIndexIsDone) == 1
+            );
+        } else throw new Exception("Test not found!");
+
+        cursor.close();
+        readableDatabase.close();
+        return test;
+    }
+
+
+    @Override
     public void update(long id, boolean done) {
+
+        SQLiteDatabase writableDatabase = openHelper.getWritableDatabase();
+
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(
+                ConstructorReaderContract.TestEntry.COLUMN_IS_DONE, done
+        );
+
+        writableDatabase.update(
+                ConstructorReaderContract.TestEntry.TABLE_NAME,
+                contentValues,
+                ConstructorReaderContract.TestEntry.COLUMN_ID + " = ?",
+                new String[]{String.valueOf(id)}
+        );
 
     }
 

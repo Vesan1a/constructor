@@ -5,15 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import androidx.annotation.NonNull;
-
 import com.example.constructor.dao.ContentChapterReaderWriter;
 import com.example.constructor.dao.ImageUrlReaderWriter;
 import com.example.constructor.dao.LinkUrlReaderWriter;
 import com.example.constructor.db.ConstructorDbOpenHelper;
 import com.example.constructor.db.ConstructorReaderContract;
 import com.example.constructor.model.ContentChapter;
-import com.example.constructor.model.ImageUrl;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -72,43 +69,12 @@ public class ContentChapterReaderWriterSqlite implements ContentChapterReaderWri
                 null
         );
 
-        List<ContentChapter> contentChapterList = getContentChaptersList(cursor);
-
-        cursor.close();
-        readableDatabase.close();
-        return contentChapterList;
-
-    }
-
-    @Override
-    public List<ContentChapter> findByChapterId(long id) {
-        SQLiteDatabase readableDatabase = openHelper.getReadableDatabase();
-
-        Cursor cursor = readableDatabase.query(
-                ConstructorReaderContract.ContentChapterEntry.TABLE_NAME,
-                null,
-                ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID + " = ?",
-                new String[]{String.valueOf(id)},
-                null,
-                null,
-                null
-        );
-
-        List<ContentChapter> contentChapterList = getContentChaptersList(cursor);
-
-        cursor.close();
-        readableDatabase.close();
-        return contentChapterList;
-    }
-
-    @NonNull
-    private List<ContentChapter> getContentChaptersList(Cursor cursor) {
         List<ContentChapter> contentChapterList = new ArrayList<>();
 
         if (cursor.moveToFirst()) {
 
             int columnIndexId = cursor.
-                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUM_ID);
+                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_ID);
             int columnIndexName = cursor.
                     getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_NAME);
             int columnIndexContent = cursor.
@@ -132,6 +98,51 @@ public class ContentChapterReaderWriterSqlite implements ContentChapterReaderWri
             } while (cursor.moveToNext());
 
         }
+
+        cursor.close();
+        readableDatabase.close();
         return contentChapterList;
+
+    }
+
+    @Override
+    public ContentChapter findByChapterId(long id) throws Exception {
+        SQLiteDatabase readableDatabase = openHelper.getReadableDatabase();
+
+        Cursor cursor = readableDatabase.query(
+                ConstructorReaderContract.ContentChapterEntry.TABLE_NAME,
+                null,
+                ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID + " = ?",
+                new String[]{String.valueOf(id)},
+                null,
+                null,
+                null
+        );
+        ContentChapter contentChapter = null;
+        if (cursor.moveToFirst()) {
+
+            int columnIndexId = cursor.
+                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_ID);
+            int columnIndexName = cursor.
+                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_NAME);
+            int columnIndexContent = cursor.
+                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT);
+            int columnIndexChapterId = cursor.
+                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID);
+
+
+            long contentChapterId = cursor.getLong(columnIndexId);
+            contentChapter = new ContentChapter(
+                    contentChapterId,
+                    cursor.getString(columnIndexName),
+                    cursor.getString(columnIndexContent),
+                    imageUrlReaderWriter.findByContentChapterId(contentChapterId),
+                    linkUrlReaderWriter.findByContentChapterId(contentChapterId),
+                    cursor.getLong(columnIndexChapterId)
+            );
+        } else throw new Exception("ContentChapter not found!");
+        cursor.close();
+        readableDatabase.close();
+        return contentChapter;
     }
 }
