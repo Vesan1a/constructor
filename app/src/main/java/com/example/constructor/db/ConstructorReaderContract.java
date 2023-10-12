@@ -10,9 +10,9 @@ public class ConstructorReaderContract {
     public static class AnswerEntry{
         public static final String TABLE_NAME = "Answer";
         public static final String COLUMN_ID = "id";
-        public static final String COLUMN_NAME = "name";
+        public static final String COLUMN_ANSWER_TEXT = "answer_text";
         public static final String COLUMN_QUESTION_ID = "question_id";
-        public static final String COLUMN_IS_RIGHT = "isRight";
+        public static final String COLUMN_IS_RIGHT = "is_right";
     }
 
     public static class ChapterEntry{
@@ -25,8 +25,7 @@ public class ConstructorReaderContract {
     public static class ContentChapterEntry{
         public static final String TABLE_NAME = "ContentChapter";
         public static final String COLUMN_ID = "id";
-        public static final String COLUMN_NAME = "name";
-        public static final String COLUMN_CONTENT = "content";
+        public static final String COLUMN_CONTENT_TEXT = "content_text";
         public static final String COLUMN_CHAPTER_ID = "chapter_id";
     }
 
@@ -47,7 +46,7 @@ public class ConstructorReaderContract {
     public static class QuestionEntry{
         public static final String TABLE_NAME = "Question";
         public static final String COLUMN_ID = "id";
-        public static final String COLUMN_NAME = "name";
+        public static final String COLUMN_QUESTION_TEXT = "question_text";
         public static final String COLUMN_TEST_ID = "test_id";
     }
 
@@ -56,7 +55,7 @@ public class ConstructorReaderContract {
         public static final String COLUMN_ID = "id";
         public static final String COLUMN_NAME = "name";
         public static final String COLUMN_CHAPTER_ID = "chapter_id";
-        public static final String COLUMN_IS_DONE = "isDone";
+        public static final String COLUMN_IS_DONE = "is_done";
     }
 
 }

@@ -1,0 +1,174 @@
+[
+  {
+    "id": 1,
+    "name": "Глава 1",
+    "accepted": false,
+    "content": {
+      "id": 1,
+      "chapter_id": 1,
+      "contentText": "Тип данных (тип) — множество значений и операций над этими значениями (IEEE Std 1320.2-1998)[1].",
+      "imageUrlList": [
+        {
+          "id": 1,
+          "contentChapter_Id": 1,
+          "url": "ImageUrl1.com"
+        },
+        {
+          "id": 2,
+          "contentChapter_Id": 1,
+          "url": "ImageUrl2.com"
+        }
+      ],
+      "linkUrlList": [
+        {
+          "id": 1,
+          "contentChapter_id": 1,
+          "url": "LinkUrl1.com"
+        },
+        {
+          "id": 2,
+          "contentChapter_id": 1,
+          "url": "LinkUrl2.com"
+        }
+      ]
+    },
+    "test": {
+      "id": 1,
+      "name": "Тест1",
+      "chapter_id": 1,
+      "isDone": false,
+      "questionList": [
+        {
+          "id": 1,
+          "questionText": "Выберите существующие типы данных",
+          "test_id": 1,
+          "answerList": [
+            {
+              "id": 1,
+              "answerText": "int",
+              "question_id": 1,
+              "isRight": true
+            },
+            {
+              "id": 2,
+              "answerText": "double",
+              "question_id": 1,
+              "isRight": true
+            },
+            {
+              "id": 3,
+              "answerText": "text",
+              "question_id": 1,
+              "isRight": false
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "questionText": "Выберите наименьший целочисленный тип",
+          "test_id": 1,
+          "answerList": [
+            {
+              "id": 4,
+              "answerText": "byte",
+              "question_id": 2,
+              "isRight": true
+            },
+            {
+              "id": 5,
+              "answerText": "long",
+              "question_id": 2,
+              "isRight": false
+            }
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "id": 2,
+    "name": "Глава 2",
+    "accepted": false,
+    "content": {
+      "id": 2,
+      "chapter_id": 2,
+      "contentText": "Арифметические операции бывают: +, -, *, /, %",
+      "imageUrlList": [
+        {
+          "id": 3,
+          "contentChapter_Id": 2,
+          "url": "ImageUrl3.com"
+        },
+        {
+          "id": 4,
+          "contentChapter_Id": 2,
+          "url": "ImageUrl4.com"
+        }
+      ],
+      "linkUrlList": [
+        {
+          "id": 3,
+          "contentChapter_id": 2,
+          "url": "LinkUrl3.com"
+        },
+        {
+          "id": 4,
+          "contentChapter_id": 2,
+          "url": "LinkUrl4.com"
+        }
+      ]
+    },
+    "test": {
+      "id": 2,
+      "name": "Тест2",
+      "chapter_id": 2,
+      "isDone": false,
+      "questionList": [
+        {
+          "id": 3,
+          "questionText": "Выберите существующие арифметические операции",
+          "test_id": 2,
+          "answerList": [
+            {
+              "id": 6,
+              "answerText": "+",
+              "question_id": 1,
+              "isRight": true
+            },
+            {
+              "id": 7,
+              "answerText": "-",
+              "question_id": 1,
+              "isRight": true
+            },
+            {
+              "id": 8,
+              "answerText": "{}",
+              "question_id": 1,
+              "isRight": false
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "questionText": "Выберите несуществующие арифметические операции",
+          "test_id": 2,
+          "answerList": [
+            {
+              "id": 9,
+              "answerText": "|",
+              "question_id": 2,
+              "isRight": true
+            },
+            {
+              "id": 10,
+              "answerText": "-",
+              "question_id": 2,
+              "isRight": false
+            }
+          ]
+        }
+      ]
+    }
+  }
+]

@@ -37,10 +37,7 @@ public class ContentChapterReaderWriterSqlite implements ContentChapterReaderWri
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(
-                ConstructorReaderContract.ContentChapterEntry.COLUMN_NAME, contentChapter.getName()
-        );
-        contentValues.put(
-                ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT, contentChapter.getContent()
+                ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT_TEXT, contentChapter.getContentText()
         );
         contentValues.put(
                 ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID, contentChapter.getChapter_id()
@@ -75,10 +72,8 @@ public class ContentChapterReaderWriterSqlite implements ContentChapterReaderWri
 
             int columnIndexId = cursor.
                     getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_ID);
-            int columnIndexName = cursor.
-                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_NAME);
             int columnIndexContent = cursor.
-                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT);
+                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT_TEXT);
             int columnIndexChapterId = cursor.
                     getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID);
 
@@ -87,7 +82,6 @@ public class ContentChapterReaderWriterSqlite implements ContentChapterReaderWri
                 long contentChapterId = cursor.getLong(columnIndexId);
                 ContentChapter contentChapter = new ContentChapter(
                         contentChapterId,
-                        cursor.getString(columnIndexName),
                         cursor.getString(columnIndexContent),
                         imageUrlReaderWriter.findByContentChapterId(contentChapterId),
                         linkUrlReaderWriter.findByContentChapterId(contentChapterId),
@@ -123,10 +117,8 @@ public class ContentChapterReaderWriterSqlite implements ContentChapterReaderWri
 
             int columnIndexId = cursor.
                     getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_ID);
-            int columnIndexName = cursor.
-                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_NAME);
             int columnIndexContent = cursor.
-                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT);
+                    getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT_TEXT);
             int columnIndexChapterId = cursor.
                     getColumnIndex(ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID);
 
@@ -134,7 +126,6 @@ public class ContentChapterReaderWriterSqlite implements ContentChapterReaderWri
             long contentChapterId = cursor.getLong(columnIndexId);
             contentChapter = new ContentChapter(
                     contentChapterId,
-                    cursor.getString(columnIndexName),
                     cursor.getString(columnIndexContent),
                     imageUrlReaderWriter.findByContentChapterId(contentChapterId),
                     linkUrlReaderWriter.findByContentChapterId(contentChapterId),

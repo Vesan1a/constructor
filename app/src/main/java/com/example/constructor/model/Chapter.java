@@ -16,13 +16,6 @@ public class Chapter {
         this.accepted = accepted;
     }
 
-    public Chapter(String name, ContentChapter content, Test test, boolean accepted) {
-        this.name = name;
-        this.content = content;
-        this.test = test;
-        this.accepted = accepted;
-    }
-
     public long getId() {
         return id;
     }
@@ -45,5 +38,16 @@ public class Chapter {
 
     public void setAccepted(boolean accepted) {
         this.accepted = accepted;
+    }
+
+    @Override
+    public String toString() {
+        return "Chapter{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", content=" + content +
+                ", test=" + test +
+                ", accepted=" + accepted +
+                '}';
     }
 }

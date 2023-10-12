@@ -23,7 +23,7 @@ public class ConstructorDbOpenHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(
                 "CREATE TABLE IF NOT EXISTS " + ConstructorReaderContract.AnswerEntry.TABLE_NAME + " (" +
                         ConstructorReaderContract.AnswerEntry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        ConstructorReaderContract.AnswerEntry.COLUMN_NAME + " TEXT, " +
+                        ConstructorReaderContract.AnswerEntry.COLUMN_ANSWER_TEXT + " TEXT, " +
                         ConstructorReaderContract.AnswerEntry.COLUMN_IS_RIGHT + " BOOLEN, " +
                         ConstructorReaderContract.AnswerEntry.COLUMN_QUESTION_ID + " INTEGER, " +
                         "FOREIGN KEY(" + ConstructorReaderContract.AnswerEntry.COLUMN_QUESTION_ID + ") " +
@@ -41,8 +41,7 @@ public class ConstructorDbOpenHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(
                 "CREATE TABLE IF NOT EXISTS " + ConstructorReaderContract.ContentChapterEntry.TABLE_NAME + " (" +
                         ConstructorReaderContract.ContentChapterEntry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        ConstructorReaderContract.ContentChapterEntry.COLUMN_NAME + " TEXT, " +
-                        ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT + " TEXT, " +
+                        ConstructorReaderContract.ContentChapterEntry.COLUMN_CONTENT_TEXT + " TEXT, " +
                         ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID + " INTEGER, " +
                         "FOREIGN KEY(" + ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID + ") " +
                         "REFERENCES " + ConstructorReaderContract.ChapterEntry.TABLE_NAME +
@@ -72,7 +71,7 @@ public class ConstructorDbOpenHelper extends SQLiteOpenHelper {
         sqLiteDatabase.execSQL(
                 "CREATE TABLE IF NOT EXISTS " + ConstructorReaderContract.QuestionEntry.TABLE_NAME + " (" +
                         ConstructorReaderContract.QuestionEntry.COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
-                        ConstructorReaderContract.QuestionEntry.COLUMN_NAME + " TEXT, " +
+                        ConstructorReaderContract.QuestionEntry.COLUMN_QUESTION_TEXT + " TEXT, " +
                         ConstructorReaderContract.QuestionEntry.COLUMN_TEST_ID + " INTEGER, " +
                         "FOREIGN KEY(" + ConstructorReaderContract.QuestionEntry.COLUMN_TEST_ID + ") " +
                         "REFERENCES " + ConstructorReaderContract.TestEntry.TABLE_NAME +

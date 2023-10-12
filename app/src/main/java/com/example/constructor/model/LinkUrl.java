@@ -11,11 +11,6 @@ public class LinkUrl {
         this.contentChapter_id = contentChapter_id;
     }
 
-    public LinkUrl(String url, long contentChapter_id) {
-        this.url = url;
-        this.contentChapter_id = contentChapter_id;
-    }
-
     public long getId() {
         return id;
     }
@@ -26,5 +21,14 @@ public class LinkUrl {
 
     public long getContentChapter_id() {
         return contentChapter_id;
+    }
+
+    @Override
+    public String toString() {
+        return "LinkUrl{" +
+                "id=" + id +
+                ", url='" + url + '\'' +
+                ", contentChapter_id=" + contentChapter_id +
+                '}';
     }
 }

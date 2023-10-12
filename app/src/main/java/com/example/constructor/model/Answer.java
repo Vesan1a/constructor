@@ -2,19 +2,13 @@ package com.example.constructor.model;
 
 public class Answer {
     private long id;
-    private String name;
+    private String answerText;
     private long question_id;
     private boolean isRight;
 
-    public Answer(long id, String name, long question_id, boolean isRight) {
+    public Answer(long id, String answerText, long question_id, boolean isRight) {
         this.id = id;
-        this.name = name;
-        this.question_id = question_id;
-        this.isRight = isRight;
-    }
-
-    public Answer(String name, long question_id, boolean isRight) {
-        this.name = name;
+        this.answerText = answerText;
         this.question_id = question_id;
         this.isRight = isRight;
     }
@@ -23,8 +17,8 @@ public class Answer {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getAnswerText() {
+        return answerText;
     }
 
     public long getQuestion_id() {
@@ -33,5 +27,15 @@ public class Answer {
 
     public boolean isRight() {
         return isRight;
+    }
+
+    @Override
+    public String toString() {
+        return "Answer{" +
+                "id=" + id +
+                ", answerText='" + answerText + '\'' +
+                ", question_id=" + question_id +
+                ", isRight=" + isRight +
+                '}';
     }
 }

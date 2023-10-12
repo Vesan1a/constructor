@@ -9,15 +9,14 @@ public class Test {
     private List<Question> questionList;
     private boolean isDone;
 
-    public Test(long id, String name, long chapter_id, List<Question> questionList, boolean isDone) {
+    public Test(
+            long id,
+            String name,
+            long chapter_id,
+            List<Question> questionList,
+            boolean isDone
+    ) {
         this.id = id;
-        this.name = name;
-        this.chapter_id = chapter_id;
-        this.questionList = questionList;
-        this.isDone = isDone;
-    }
-
-    public Test(String name, long chapter_id, List<Question> questionList, boolean isDone) {
         this.name = name;
         this.chapter_id = chapter_id;
         this.questionList = questionList;
@@ -46,5 +45,16 @@ public class Test {
 
     public void setDone(boolean done) {
         isDone = done;
+    }
+
+    @Override
+    public String toString() {
+        return "Test{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", chapter_id=" + chapter_id +
+                ", questionList=" + questionList +
+                ", isDone=" + isDone +
+                '}';
     }
 }

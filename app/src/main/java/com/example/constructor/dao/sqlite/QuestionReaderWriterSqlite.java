@@ -33,7 +33,7 @@ public class QuestionReaderWriterSqlite implements QuestionReaderWriter {
 
         ContentValues contentValues = new ContentValues();
         contentValues.put(
-                ConstructorReaderContract.QuestionEntry.COLUMN_NAME, question.getName()
+                ConstructorReaderContract.QuestionEntry.COLUMN_QUESTION_TEXT, question.getQuestionText()
         );
         contentValues.put(
                 ConstructorReaderContract.QuestionEntry.COLUMN_TEST_ID, question.getTest_id()
@@ -97,7 +97,7 @@ public class QuestionReaderWriterSqlite implements QuestionReaderWriter {
             int columnIndexId = cursor.
                     getColumnIndex(ConstructorReaderContract.QuestionEntry.COLUMN_ID);
             int columnIndexName = cursor.
-                    getColumnIndex(ConstructorReaderContract.QuestionEntry.COLUMN_NAME);
+                    getColumnIndex(ConstructorReaderContract.QuestionEntry.COLUMN_QUESTION_TEXT);
             int columnIndexTestId = cursor.
                     getColumnIndex(ConstructorReaderContract.QuestionEntry.COLUMN_TEST_ID);
 

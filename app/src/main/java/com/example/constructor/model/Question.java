@@ -4,19 +4,13 @@ import java.util.List;
 
 public class Question {
     private long id;
-    private String name;
+    private String questionText;
     private long test_id;
     private List<Answer> answerList;
 
-    public Question(long id, String name, long test_id, List<Answer> answerList) {
+    public Question(long id, String questionText, long test_id, List<Answer> answerList) {
         this.id = id;
-        this.name = name;
-        this.test_id = test_id;
-        this.answerList = answerList;
-    }
-
-    public Question(String name, long test_id, List<Answer> answerList) {
-        this.name = name;
+        this.questionText = questionText;
         this.test_id = test_id;
         this.answerList = answerList;
     }
@@ -25,8 +19,8 @@ public class Question {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getQuestionText() {
+        return questionText;
     }
 
     public long getTest_id() {
@@ -35,5 +29,15 @@ public class Question {
 
     public List<Answer> getAnswerList() {
         return answerList;
+    }
+
+    @Override
+    public String toString() {
+        return "Question{" +
+                "id=" + id +
+                ", questionText='" + questionText + '\'' +
+                ", test_id=" + test_id +
+                ", answerList=" + answerList +
+                '}';
     }
 }

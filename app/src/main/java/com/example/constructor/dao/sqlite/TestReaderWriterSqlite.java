@@ -5,13 +5,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 
-import androidx.annotation.NonNull;
-
 import com.example.constructor.dao.QuestionReaderWriter;
 import com.example.constructor.dao.TestReaderWriter;
 import com.example.constructor.db.ConstructorDbOpenHelper;
 import com.example.constructor.db.ConstructorReaderContract;
-import com.example.constructor.model.ContentChapter;
 import com.example.constructor.model.Test;
 
 import java.util.ArrayList;
