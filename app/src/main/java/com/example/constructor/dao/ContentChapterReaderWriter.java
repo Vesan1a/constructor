@@ -2,8 +2,13 @@ package com.example.constructor.dao;
 
 import com.example.constructor.model.ContentChapter;
 
-public interface ContentChapterReaderWriter extends ContentChapterReader {
+import java.util.List;
 
-    long insert (ContentChapter contentChapter);
+public interface ContentChapterReaderWriter {
+    List<ContentChapter> findAll();
+
+    ContentChapter findByChapterId(long id) throws Exception;
+
+    long insert(ContentChapter contentChapter);
 
 }

@@ -2,8 +2,14 @@ package com.example.constructor.dao;
 
 import com.example.constructor.model.ImageUrl;
 
-public interface ImageUrlReaderWriter extends ImageUrlReader{
+import java.util.List;
 
-    long insert (ImageUrl url);
+public interface ImageUrlReaderWriter {
+
+    List<ImageUrl> findAll();
+
+    List<ImageUrl> findByContentChapterId(long id);
+
+    long insert(ImageUrl url);
 
 }

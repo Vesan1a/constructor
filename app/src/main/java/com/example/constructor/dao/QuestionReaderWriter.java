@@ -2,7 +2,13 @@ package com.example.constructor.dao;
 
 import com.example.constructor.model.Question;
 
-public interface QuestionReaderWriter extends QuestionReader{
+import java.util.List;
 
-    long insert (Question question);
+public interface QuestionReaderWriter {
+
+    List<Question> findAll();
+
+    List<Question> findByTestId(long id);
+
+    long insert(Question question);
 }

@@ -2,7 +2,13 @@ package com.example.constructor.dao;
 
 import com.example.constructor.model.LinkUrl;
 
-public interface LinkUrlReaderWriter extends LinkUrlReader{
+import java.util.List;
 
-    long insert (LinkUrl url);
+public interface LinkUrlReaderWriter {
+
+    List<LinkUrl> findAll();
+
+    List<LinkUrl> findByContentChapterId(long id);
+
+    long insert(LinkUrl url);
 }
