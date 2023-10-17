@@ -2,21 +2,16 @@
 <resources>
 
     <style name="ts_bookName" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">27sp</item>
-        <item name="fontFamily">@font/try_clother_bold</item>
-        <item name="android:lineSpacingExtra">-13dp</item>
-        <item name="android:textColor">@color/white</item>
-        <item name="android:shadowColor">@color/gray_shadow</item>
-        <item name="android:shadowRadius">2</item>
-        <item name="android:shadowDx">0</item>
-        <item name="android:shadowDy">2</item>
+        <item name="android:textSize">24sp</item>
+        <item name="fontFamily">@font/try_clother</item>
+        <item name="android:textColor">@color/gray_text</item>
     </style>
 
     <style name="ts_btn" parent="TextAppearance.AppCompat">
         <item name="android:textSize">17sp</item>
-        <item name="fontFamily">@font/try_clother_bold</item>
+        <item name="fontFamily">@font/try_clother</item>
         <item name="android:lineSpacingExtra">-13dp</item>
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">@color/gray_text</item>
         <item name="android:shadowColor">@color/gray_shadow</item>
         <item name="android:shadowRadius">2</item>
         <item name="android:shadowDx">0</item>
@@ -25,9 +20,16 @@
 
     <style name="ts_chapterTitle" parent="TextAppearance.AppCompat">
         <item name="android:textSize">20sp</item>
-        <item name="fontFamily">@font/try_clother_bold</item>
+        <item name="fontFamily">@font/try_clother</item>
         <item name="android:textColor">@color/gray_text</item>
     </style>
+
+    <style name="ts_chapterPreview" parent="TextAppearance.AppCompat">
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/try_clother</item>
+        <item name="android:textColor">@color/brown</item>
+    </style>
+
 
     <style name="ts_chapterText" parent="TextAppearance.AppCompat">
         <item name="android:textSize">17sp</item>

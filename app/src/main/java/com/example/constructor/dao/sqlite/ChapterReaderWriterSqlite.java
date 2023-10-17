@@ -43,11 +43,13 @@ public class ChapterReaderWriterSqlite implements ChapterReaderWriter {
                 ConstructorReaderContract.ChapterEntry.COLUMN_ACCEPTED, chapter.isAccepted()
         );
 
-        return writableDatabase.insert(
+        long id = writableDatabase.insert(
                 ConstructorReaderContract.ChapterEntry.TABLE_NAME,
                 null,
                 contentValues
         );
+        writableDatabase.close();
+        return id;
 
     }
 
@@ -99,6 +101,8 @@ public class ChapterReaderWriterSqlite implements ChapterReaderWriter {
             } while (cursor.moveToNext());
 
         }
+        cursor.close();
+        readableDatabase.close();
         return chapterList;
     }
 
@@ -117,6 +121,8 @@ public class ChapterReaderWriterSqlite implements ChapterReaderWriter {
                 ConstructorReaderContract.ChapterEntry.COLUMN_ID + " = ?",
                 new String[]{String.valueOf(id)}
         );
+
+        writableDatabase.close();
 
     }
 }

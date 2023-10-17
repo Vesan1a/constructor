@@ -40,11 +40,13 @@ public class TestReaderWriterSqlite implements TestReaderWriter {
                 ConstructorReaderContract.TestEntry.COLUMN_IS_DONE, test.isDone()
         );
 
-        return writableDatabase.insert(
+        long id = writableDatabase.insert(
                 ConstructorReaderContract.TestEntry.TABLE_NAME,
                 null,
                 contentValues
         );
+        writableDatabase.close();
+        return id;
     }
 
     @Override
@@ -154,6 +156,8 @@ public class TestReaderWriterSqlite implements TestReaderWriter {
                 ConstructorReaderContract.TestEntry.COLUMN_ID + " = ?",
                 new String[]{String.valueOf(id)}
         );
+
+        writableDatabase.close();
 
     }
 

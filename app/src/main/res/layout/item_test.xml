@@ -13,22 +13,15 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="22dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/tv_question_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="12dp"
                 style="@style/ts_chapterTitle"
                 android:text="Текст вопроса"/>
-
-            <ImageView
-                android:id="@+id/iv_question_bottomLine"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:src="@drawable/line"/>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_question_answer"
@@ -39,15 +32,14 @@
                 tools:listitem="@layout/item_answer" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_accept_answer"
+                android:id="@+id/btn_start_test"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="22dp"
                 style="@style/ts_btn"
                 android:text="@string/acceptAnswer"
-                app:backgroundTintMode="screen"
-                android:background="@drawable/gradient_color2"/>
+                app:backgroundTint="@color/pink"/>
 
 
         </LinearLayout>

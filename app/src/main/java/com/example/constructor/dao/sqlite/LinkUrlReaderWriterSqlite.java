@@ -36,11 +36,13 @@ public class LinkUrlReaderWriterSqlite implements LinkUrlReaderWriter {
                 ConstructorReaderContract.LinkUrlEntry.COLUMN_CONTENT_CHAPTER_ID, url.getContentChapter_id()
         );
 
-        return writableDatabase.insert(
+        long id = writableDatabase.insert(
                 ConstructorReaderContract.LinkUrlEntry.TABLE_NAME,
                 null,
                 contentValues
         );
+        writableDatabase.close();
+        return id;
     }
 
     @Override

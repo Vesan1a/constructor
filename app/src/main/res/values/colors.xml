@@ -5,7 +5,10 @@
     <color name="mint">#83D4EA</color>
     <color name="mint2">#1BCDDD</color>
     <color name="gray_shadow">#37B5B5B5</color>
-    <color name="gray_text">#666666</color>
+    <color name="gray_text">#4C4848</color>
     <color name="blue">#7FAFF6</color>
     <color name="blue2">#418AF6</color>
+    <color name="pink">#F0E5E6</color>
+    <color name="pink_dark">#E7A2A0</color>
+    <color name="brown">#6A5C5C</color>
 </resources>

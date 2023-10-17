@@ -36,11 +36,13 @@ public class ImageUrlReaderWriterSqlite implements ImageUrlReaderWriter {
                 ConstructorReaderContract.ImageUrlEntry.COLUMN_CONTENT_CHAPTER_ID, url.getContentChapter_Id()
         );
 
-        return writableDatabase.insert(
+        long id = writableDatabase.insert(
                 ConstructorReaderContract.ImageUrlEntry.TABLE_NAME,
                 null,
                 contentValues
         );
+        writableDatabase.close();
+        return id;
 
     }
 

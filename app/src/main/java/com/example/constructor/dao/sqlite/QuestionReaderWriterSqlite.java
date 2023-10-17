@@ -39,11 +39,13 @@ public class QuestionReaderWriterSqlite implements QuestionReaderWriter {
                 ConstructorReaderContract.QuestionEntry.COLUMN_TEST_ID, question.getTest_id()
         );
 
-        return writableDatabase.insert(
+        long id = writableDatabase.insert(
                 ConstructorReaderContract.QuestionEntry.TABLE_NAME,
                 null,
                 contentValues
         );
+        writableDatabase.close();
+        return id;
     }
 
     @Override

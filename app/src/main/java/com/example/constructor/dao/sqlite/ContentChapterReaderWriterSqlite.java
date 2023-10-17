@@ -43,11 +43,13 @@ public class ContentChapterReaderWriterSqlite implements ContentChapterReaderWri
                 ConstructorReaderContract.ContentChapterEntry.COLUMN_CHAPTER_ID, contentChapter.getChapter_id()
         );
 
-        return writableDatabase.insert(
+        long id = writableDatabase.insert(
                 ConstructorReaderContract.ContentChapterEntry.TABLE_NAME,
                 null,
                 contentValues
         );
+        writableDatabase.close();
+        return id;
 
     }
 
