@@ -35,7 +35,7 @@ public class HomeFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.rv_list);
         chapterList = new ChapterReaderWriterSqlite(getContext()).findAll();
-        HomeAdapter homeAdapter = new HomeAdapter(chapterList, getContext());
+        HomeAdapter homeAdapter = new HomeAdapter(chapterList, getContext(), this);
         recyclerView.setAdapter(homeAdapter);
         return view;
     }

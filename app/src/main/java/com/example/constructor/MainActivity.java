@@ -24,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        new LoaderJsonSqlite(this).loadData();
         /*List<ImageUrl> imageUrls = List.of(
                 new ImageUrl(1, "ImageUrl1.com", 1),
                 new ImageUrl(2, "ImageUrl2.com", 1)
@@ -74,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         );
         List<Chapter> chapters = List.of(chapter1, chapter2);*/
 
-        Log.e("json", new ChapterReaderJson(this).findAll().toString());
+        //Log.e("json", new ChapterReaderJson(this).findAll().toString());
     }
 
 

@@ -5,7 +5,7 @@ public class ConstructorReaderContract {
     private ConstructorReaderContract() {}
 
     public static final String DATABASE_NAME = "Constructor.db";
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
 
     public static class AnswerEntry{
         public static final String TABLE_NAME = "Answer";
