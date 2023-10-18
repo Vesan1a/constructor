@@ -14,7 +14,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.constructor.R;
 import com.example.constructor.adapter.HomeAdapter;
 import com.example.constructor.dao.sqlite.ChapterReaderWriterSqlite;
-import com.example.constructor.db.ConstructorDbOpenHelper;
 import com.example.constructor.model.Chapter;
 
 import java.util.ArrayList;
@@ -23,6 +22,8 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private List<Chapter> chapterList = new ArrayList<>();
+
+    private Context context;
 
 
     @Nullable
@@ -34,8 +35,8 @@ public class HomeFragment extends Fragment {
     ) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.rv_list);
-        chapterList = new ChapterReaderWriterSqlite(getContext()).findAll();
-        HomeAdapter homeAdapter = new HomeAdapter(chapterList, getContext(), this);
+        chapterList = new ChapterReaderWriterSqlite(context).findAll();
+        HomeAdapter homeAdapter = new HomeAdapter(chapterList, context, this);
         recyclerView.setAdapter(homeAdapter);
         return view;
     }

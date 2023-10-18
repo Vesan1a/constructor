@@ -6,17 +6,17 @@
     "content": {
       "id": 1,
       "chapter_id": 1,
-      "contentText": "Тип данных (тип) — множество значений и операций над этими значениями (IEEE Std 1320.2-1998)[1].",
+      "contentText": "Тип данных (тип) — множество значений и операций над этими значениями (IEEE Std 1320.2-1998)[1]. image_r Какой-то абзац. image_r Еще текст. {link} Последний абзац",
       "imageUrlList": [
         {
           "id": 1,
           "contentChapter_Id": 1,
-          "url": "ImageUrl1.com"
+          "url": "check_box"
         },
         {
           "id": 2,
           "contentChapter_Id": 1,
-          "url": "ImageUrl2.com"
+          "url": "logo"
         }
       ],
       "linkUrlList": [

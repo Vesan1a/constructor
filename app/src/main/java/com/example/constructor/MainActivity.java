@@ -7,6 +7,7 @@ import android.util.Log;
 
 import com.example.constructor.dao.LoaderJsonSqlite;
 import com.example.constructor.dao.json.ChapterReaderJson;
+import com.example.constructor.db.ConstructorReaderContract;
 import com.example.constructor.model.Answer;
 import com.example.constructor.model.Chapter;
 import com.example.constructor.model.ContentChapter;
@@ -16,6 +17,7 @@ import com.example.constructor.model.Question;
 import com.example.constructor.model.Test;
 import com.google.gson.Gson;
 
+import java.io.File;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
