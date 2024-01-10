@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="ts_bookName" parent="TextAppearance.AppCompat">
+    <style name="ts_book_name" parent="TextAppearance.AppCompat">
         <item name="android:textSize">24sp</item>
         <item name="fontFamily">@font/try_clother</item>
         <item name="android:textColor">@color/gray_text</item>
@@ -12,39 +12,33 @@
         <item name="fontFamily">@font/try_clother</item>
         <item name="android:lineSpacingExtra">-13dp</item>
         <item name="android:textColor">@color/gray_text</item>
-        <item name="android:shadowColor">@color/gray_shadow</item>
+        <item name="android:shadowColor">@color/gray_text</item>
         <item name="android:shadowRadius">2</item>
         <item name="android:shadowDx">0</item>
         <item name="android:shadowDy">2</item>
     </style>
 
-    <style name="ts_chapterTitle" parent="TextAppearance.AppCompat">
+    <style name="ts_chapter_title" parent="TextAppearance.AppCompat">
         <item name="android:textSize">20sp</item>
         <item name="fontFamily">@font/try_clother</item>
         <item name="android:textColor">@color/gray_text</item>
     </style>
 
-    <style name="ts_chapterPreview" parent="TextAppearance.AppCompat">
+    <style name="ts_chapter_preview" parent="TextAppearance.AppCompat">
         <item name="android:textSize">14sp</item>
         <item name="fontFamily">@font/try_clother</item>
         <item name="android:textColor">@color/brown</item>
     </style>
 
 
-    <style name="ts_chapterText" parent="TextAppearance.AppCompat">
+    <style name="ts_chapter_text" parent="TextAppearance.AppCompat">
         <item name="android:textSize">17sp</item>
         <item name="fontFamily">@font/try_clother</item>
         <item name="android:textColor">@color/gray_text</item>
     </style>
 
-    <style name="ts_testPoints" parent="TextAppearance.AppCompat">
+    <style name="ts_test_points" parent="TextAppearance.AppCompat">
         <item name="android:textSize">60sp</item>
-        <item name="fontFamily">@font/try_clother_bold</item>
-        <item name="android:textColor">@color/gray_text</item>
-    </style>
-
-    <style name="ts_testResult" parent="TextAppearance.AppCompat">
-        <item name="android:textSize">30sp</item>
         <item name="fontFamily">@font/try_clother_bold</item>
         <item name="android:textColor">@color/gray_text</item>
     </style>

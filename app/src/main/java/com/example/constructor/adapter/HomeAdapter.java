@@ -12,7 +12,6 @@ import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.constructor.R;
-import com.example.constructor.fragment.ChapterFragment;
 import com.example.constructor.fragment.HomeFragment;
 import com.example.constructor.model.Chapter;
 import com.example.constructor.model.ContentChapter;
@@ -89,8 +88,8 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
 
             super(itemView);
 
-            tvChapterTitle = itemView.findViewById(R.id.tv_chapterTitle);
-            tvPreviewContent = itemView.findViewById(R.id.tv_previewContent);
+            tvChapterTitle = itemView.findViewById(R.id.tv_chapter_title);
+            tvPreviewContent = itemView.findViewById(R.id.tv_preview_content);
             cbCheckBox = itemView.findViewById(R.id.cb_chapter_checkBox);
         }
     }

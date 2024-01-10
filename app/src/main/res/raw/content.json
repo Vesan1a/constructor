@@ -60,6 +60,18 @@
               "answerText": "text",
               "question_id": 1,
               "isRight": false
+            },
+            {
+              "id": 4,
+              "answerText": "xml",
+              "question_id": 1,
+              "isRight": false
+            },
+            {
+              "id": 5,
+              "answerText": "long",
+              "question_id": 1,
+              "isRight": false
             }
           ]
         },
@@ -132,19 +144,19 @@
             {
               "id": 6,
               "answerText": "+",
-              "question_id": 1,
+              "question_id": 3,
               "isRight": true
             },
             {
               "id": 7,
               "answerText": "-",
-              "question_id": 1,
+              "question_id": 3,
               "isRight": true
             },
             {
               "id": 8,
               "answerText": "{}",
-              "question_id": 1,
+              "question_id": 3,
               "isRight": false
             }
           ]
@@ -157,13 +169,13 @@
             {
               "id": 9,
               "answerText": "|",
-              "question_id": 2,
+              "question_id": 4,
               "isRight": true
             },
             {
               "id": 10,
               "answerText": "-",
-              "question_id": 2,
+              "question_id": 4,
               "isRight": false
             }
           ]

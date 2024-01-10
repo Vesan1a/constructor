@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -13,9 +14,9 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.fragment.NavHostFragment;
 
 import com.example.constructor.R;
-import com.example.constructor.dao.ContentChapterReaderWriter;
 import com.example.constructor.dao.sqlite.ContentChapterReaderWriterSqlite;
 import com.example.constructor.model.ContentChapter;
 import com.example.constructor.model.ImageUrl;
@@ -50,7 +51,7 @@ public class ChapterFragment extends Fragment {
 
             TextView textView = new TextView(context);
             textView.setText(splitContent[i]);
-            textView.setTextAppearance(R.style.ts_chapterText);
+            textView.setTextAppearance(R.style.ts_chapter_text);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,
                     ViewGroup.LayoutParams.WRAP_CONTENT
@@ -71,6 +72,19 @@ public class ChapterFragment extends Fragment {
                 numberView++;
             }
         }
+        Button button = view.findViewById(R.id.btn_start_test);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Bundle bundle = new Bundle();
+                bundle.putLong("chapter_id", id);
+
+                NavHostFragment
+                        .findNavController(ChapterFragment.this)
+                        .navigate(R.id.action_chapterFragment_to_testFragment, bundle);
+            }
+        });
+
         return view;
     }
 }

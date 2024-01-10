@@ -1,6 +1,7 @@
 package com.example.constructor.model;
 
 import java.util.List;
+import java.util.Objects;
 
 public class Question {
     private long id;
@@ -39,5 +40,18 @@ public class Question {
                 ", test_id=" + test_id +
                 ", answerList=" + answerList +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Question question = (Question) o;
+        return id == question.id && test_id == question.test_id && Objects.equals(questionText, question.questionText) && Objects.equals(answerList, question.answerList);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, questionText, test_id, answerList);
     }
 }

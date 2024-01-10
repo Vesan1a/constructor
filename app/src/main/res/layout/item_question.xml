@@ -16,11 +16,11 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_question_name"
+                android:id="@+id/tv_question_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="12dp"
-                style="@style/ts_chapterTitle"
+                style="@style/ts_chapter_title"
                 android:text="Текст вопроса"/>
 
             <androidx.recyclerview.widget.RecyclerView
@@ -32,7 +32,7 @@
                 tools:listitem="@layout/item_answer" />
 
             <com.google.android.material.button.MaterialButton
-                android:id="@+id/btn_start_test"
+                android:id="@+id/btn_accept"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -40,7 +40,6 @@
                 style="@style/ts_btn"
                 android:text="@string/acceptAnswer"
                 app:backgroundTint="@color/pink"/>
-
 
         </LinearLayout>
 

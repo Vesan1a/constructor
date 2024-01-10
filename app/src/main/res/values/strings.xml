@@ -6,4 +6,5 @@
     <string name="testRepeat">ПРОЙТИ ТЕСТ ПОВТОРНО</string>
     <string name="complete">ЗАВЕРШИТЬ</string>
     <string name="acceptAnswer">Принять ответ</string>
+    <string name="test_name">Название теста</string>
 </resources>

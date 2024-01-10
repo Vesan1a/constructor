@@ -16,8 +16,8 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/tv_chapterTitle"
-                style="@style/ts_chapterTitle"
+                android:id="@+id/tv_chapter_title"
+                style="@style/ts_chapter_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
