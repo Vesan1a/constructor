@@ -1,6 +1,7 @@
 package com.example.constructor.adapter;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.constructor.R;
 import com.example.constructor.model.Question;
 import com.google.android.material.button.MaterialButton;
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.HashMap;
 import java.util.List;
@@ -27,6 +29,8 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
 
     private Map<Question, Boolean> resultQuestion;
 
+    private int acceptCounter;
+
     public QuestionAdapter(List<Question> questionList, Context context) {
         this.questionList = questionList;
         this.context = context;
@@ -35,6 +39,7 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
         for (int i = 0; i < questionList.size(); i++) {
             resultQuestion.put(questionList.get(i), false);
         }
+        acceptCounter = questionList.size();
     }
 
     @NonNull
@@ -53,10 +58,24 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
         holder.btnAccept.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                acceptCounter--;
                 resultQuestion.put(question, answerAdapter.isAnswerCorrect());
                 holder.btnAccept.setClickable(false);
                 holder.btnAccept.setVisibility(View.INVISIBLE);
                 answerAdapter.blockCheckBox();
+
+                if (acceptCounter == 0) {
+                    new MaterialAlertDialogBuilder(context).setTitle("resources.getString(R.string.title)")
+                            .setMessage("resources.getString(R.string.supporting_text)")
+                            .setNeutralButton("", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+
+                                }
+                            })
+                            .show();
+
+                }
             }
         });
     }

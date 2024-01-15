@@ -28,7 +28,7 @@ public class AnswerAdapter extends RecyclerView.Adapter<AnswerAdapter.MyViewHold
 
     private Map<Answer, Boolean> studentAnswers;
 
-    boolean checkboxEnabled;
+    private boolean checkboxEnabled;
 
 
     public AnswerAdapter(Context context, List<Answer> answerList) {
