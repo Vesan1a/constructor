@@ -1,5 +1,6 @@
 package com.example.constructor.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.view.LayoutInflater;
@@ -8,9 +9,12 @@ import android.view.ViewGroup;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.constructor.R;
+import com.example.constructor.dao.sqlite.ChapterReaderWriterSqlite;
+import com.example.constructor.fragment.TestFragment;
 import com.example.constructor.model.Question;
 import com.google.android.material.button.MaterialButton;
 import com.google.android.material.dialog.MaterialAlertDialogBuilder;
@@ -29,11 +33,14 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
 
     private Map<Question, Boolean> resultQuestion;
 
+    private TestFragment testFragment;
+
     private int acceptCounter;
 
-    public QuestionAdapter(List<Question> questionList, Context context) {
-        this.questionList = questionList;
+    public QuestionAdapter(Context context, List<Question> questionList, TestFragment testFragment) {
         this.context = context;
+        this.questionList = questionList;
+        this.testFragment = testFragment;
         inflater = LayoutInflater.from(context);
         resultQuestion = new HashMap<>();
         for (int i = 0; i < questionList.size(); i++) {
@@ -65,19 +72,35 @@ public class QuestionAdapter extends RecyclerView.Adapter<QuestionAdapter.MyView
                 answerAdapter.blockCheckBox();
 
                 if (acceptCounter == 0) {
-                    new MaterialAlertDialogBuilder(context).setTitle("resources.getString(R.string.title)")
-                            .setMessage("resources.getString(R.string.supporting_text)")
-                            .setNeutralButton("", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialogInterface, int i) {
-
+                    int result = calcResult();
+                    new MaterialAlertDialogBuilder(context).setTitle(context.getResources().getString(R.string.result))
+                            .setMessage(result + "%")
+                            .setPositiveButton(context.getResources().getString(R.string.complete), (dialogInterface, i) -> {
+                                if (result > 70) {
+                                    new ChapterReaderWriterSqlite(context)
+                                            .update(
+                                                    testFragment.getArguments().getLong("chapter_id"),
+                                                    true
+                                            );
                                 }
+                                NavHostFragment.findNavController(testFragment)
+                                        .navigate(R.id.action_testFragment_to_homeFragment3);
+
                             })
                             .show();
 
                 }
             }
         });
+    }
+
+    private int calcResult() {
+        double rightCounter = 0;
+
+        for (Map.Entry<Question, Boolean> entry : resultQuestion.entrySet()) {
+            if (entry.getValue()) rightCounter++;
+        }
+        return (int) (rightCounter / questionList.size() * 100);
     }
 
 

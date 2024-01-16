@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -22,6 +23,8 @@ import java.util.List;
 public class HomeFragment extends Fragment {
 
     private List<Chapter> chapterList = new ArrayList<>();
+    private ChapterReaderWriterSqlite chapterReaderWriterSqlite;
+    private HomeAdapter homeAdapter;
 
 
 
@@ -34,9 +37,18 @@ public class HomeFragment extends Fragment {
     ) {
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         RecyclerView recyclerView = view.findViewById(R.id.rv_list);
-        chapterList = new ChapterReaderWriterSqlite(getContext()).findAll();
-        HomeAdapter homeAdapter = new HomeAdapter(chapterList, getContext(), this);
+        chapterReaderWriterSqlite = new ChapterReaderWriterSqlite(getContext());
+        chapterList = chapterReaderWriterSqlite.findAll();
+        homeAdapter = new HomeAdapter(chapterList, getContext(), this);
         recyclerView.setAdapter(homeAdapter);
         return view;
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        chapterList.clear();
+        chapterList.addAll(chapterReaderWriterSqlite.findAll());
+        homeAdapter.notifyDataSetChanged();
     }
 }

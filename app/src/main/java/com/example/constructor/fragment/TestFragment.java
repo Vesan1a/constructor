@@ -45,7 +45,7 @@ public class TestFragment extends Fragment {
         TextView tvTestName = view.findViewById(R.id.tv_test_name);
         tvTestName.setText(test.getName());
         ViewPager2 viewPager = view.findViewById(R.id.vp_test);
-        viewPager.setAdapter(new QuestionAdapter(test.getQuestionList(), context));
+        viewPager.setAdapter(new QuestionAdapter(context, test.getQuestionList(), this));
         TabLayout tabDots = view.findViewById(R.id.tl_dots);
         TabLayoutMediator tabLayoutMediator = new TabLayoutMediator(
                 tabDots,

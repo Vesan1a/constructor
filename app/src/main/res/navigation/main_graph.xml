@@ -32,5 +32,9 @@
         android:id="@+id/testFragment"
         android:name="com.example.constructor.fragment.TestFragment"
         android:label="TestFragment"
-        tools:layout="@layout/fragment_test"/>
+        tools:layout="@layout/fragment_test">
+        <action
+            android:id="@+id/action_testFragment_to_homeFragment3"
+            app:destination="@id/homeFragment" />
+    </fragment>
 </navigation>

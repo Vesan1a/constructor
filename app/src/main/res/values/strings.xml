@@ -3,8 +3,8 @@
     <string name="pyton">Математика на Python</string>
     <string name="name_1">1. Название главы 1</string>
     <string name="startTest">Пройти тест</string>
-    <string name="testRepeat">ПРОЙТИ ТЕСТ ПОВТОРНО</string>
-    <string name="complete">ЗАВЕРШИТЬ</string>
+    <string name="complete">Завершить</string>
     <string name="acceptAnswer">Принять ответ</string>
     <string name="test_name">Название теста</string>
+    <string name="result">Результат</string>
 </resources>

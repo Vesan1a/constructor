@@ -42,4 +42,8 @@
         <item name="fontFamily">@font/try_clother_bold</item>
         <item name="android:textColor">@color/gray_text</item>
     </style>
+
+    <style name="Widget.App.Button" parent="Widget.Material3.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/pink_dark</item>
+    </style>
 </resources>

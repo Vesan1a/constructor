@@ -2,7 +2,7 @@
   {
     "id": 1,
     "name": "Глава 1",
-    "accepted": true,
+    "accepted": false,
     "content": {
       "id": 1,
       "chapter_id": 1,
