@@ -38,12 +38,16 @@ public class ChapterFragment extends Fragment {
     ) {
         context = getContext();
         View view = inflater.inflate(R.layout.fragment_chapter, container, false);
-        long id = getArguments().getLong("chapter_id");
+        Bundle arguments = getArguments();
+        long id = arguments.getLong("chapter_id");
+        String name = arguments.getString("chapter_name");
         try {
             contentChapter = new ContentChapterReaderWriterSqlite(context).findByChapterId(id);
         } catch (Exception e) {
             Log.e("ChapterFragment", e.getMessage());
         }
+        TextView tvChapterTitle = view.findViewById(R.id.tv_chapter_title);
+        tvChapterTitle.setText(name);
         LinearLayout linearLayout = view.findViewById(R.id.ll_chapter_content);
         String[] splitContent = contentChapter.getContentText().split("image_r");
         int numberView = 0;

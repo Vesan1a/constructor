@@ -37,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="22dp"
+                android:layout_marginBottom="22dp"
                 style="@style/ts_btn"
                 android:text="@string/startTest"
                 app:backgroundTint="@color/pink"/>

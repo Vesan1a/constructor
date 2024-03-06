@@ -45,7 +45,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Chapter chapter = chapterList.get(position);
         ContentChapter contentChapter = chapter.getContent();
-        holder.tvPreviewContent.setText(contentChapter.getContentText().substring(0, 45) + "...");
+        holder.tvPreviewContent.setText(contentChapter.getContentText().substring(0, 40) + "...");
         holder.tvChapterTitle.setText(chapter.getName());
         if (chapter.isAccepted()) {
             holder.cbCheckBox.setChecked(true);
@@ -61,6 +61,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
             public void onClick(View view) {
                 Bundle bundle = new Bundle();
                 bundle.putLong("chapter_id", chapter.getId());
+                bundle.putString("chapter_name", chapter.getName());
 
                 NavHostFragment
                         .findNavController(homeFragment)
