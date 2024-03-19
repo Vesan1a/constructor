@@ -8,7 +8,12 @@ public class Answer {
     private long question_id;
     private boolean isRight;
 
-    public Answer(long id, String answerText, long question_id, boolean isRight) {
+    public Answer(
+            long id,
+            String answerText,
+            long question_id,
+            boolean isRight
+    ) {
         this.id = id;
         this.answerText = answerText;
         this.question_id = question_id;

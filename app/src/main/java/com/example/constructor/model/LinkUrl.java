@@ -5,7 +5,11 @@ public class LinkUrl {
     private String url;
     private long contentChapter_id;
 
-    public LinkUrl(long id, String url, long contentChapter_id) {
+    public LinkUrl(
+            long id,
+            String url,
+            long contentChapter_id
+    ) {
         this.id = id;
         this.url = url;
         this.contentChapter_id = contentChapter_id;

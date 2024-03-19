@@ -5,7 +5,11 @@ public class ImageUrl {
     private String url;
     private long contentChapter_Id;
 
-    public ImageUrl(long id, String url, long contentChapter_Id) {
+    public ImageUrl(
+            long id,
+            String url,
+            long contentChapter_Id
+    ) {
         this.id = id;
         this.url = url;
         this.contentChapter_Id = contentChapter_Id;

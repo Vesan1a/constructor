@@ -2,6 +2,7 @@ package com.example.constructor.adapter;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -45,7 +46,7 @@ public class HomeAdapter extends RecyclerView.Adapter<HomeAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         Chapter chapter = chapterList.get(position);
         ContentChapter contentChapter = chapter.getContent();
-        holder.tvPreviewContent.setText(contentChapter.getContentText().substring(0, 40) + "...");
+        holder.tvPreviewContent.setText(Html.fromHtml(contentChapter.getContentText().substring(0, 40) + "..."));
         holder.tvChapterTitle.setText(chapter.getName());
         if (chapter.isAccepted()) {
             holder.cbCheckBox.setChecked(true);

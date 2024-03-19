@@ -14,7 +14,8 @@ public class ContentChapter {
             String contentText,
             List<ImageUrl> imageUrlList,
             List<LinkUrl> linkUrlList,
-            long chapter_id) {
+            long chapter_id
+    ) {
         this.id = id;
         this.contentText = contentText;
         this.imageUrlList = imageUrlList;

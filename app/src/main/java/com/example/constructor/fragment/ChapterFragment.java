@@ -2,6 +2,7 @@ package com.example.constructor.fragment;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -54,7 +55,7 @@ public class ChapterFragment extends Fragment {
         for (int i = 0; i < splitContent.length; i++) {
 
             TextView textView = new TextView(context);
-            textView.setText(splitContent[i]);
+            textView.setText(Html.fromHtml(splitContent[i]));
             textView.setTextAppearance(R.style.ts_chapter_text);
             LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                     ViewGroup.LayoutParams.MATCH_PARENT,

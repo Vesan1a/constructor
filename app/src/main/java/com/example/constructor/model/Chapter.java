@@ -8,7 +8,13 @@ public class Chapter {
     private boolean accepted;
 
 
-    public Chapter(long id, String name, ContentChapter content, Test test, boolean accepted) {
+    public Chapter(
+            long id,
+            String name,
+            ContentChapter content,
+            Test test,
+            boolean accepted
+    ) {
         this.id = id;
         this.name = name;
         this.content = content;

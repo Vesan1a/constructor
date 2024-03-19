@@ -9,7 +9,12 @@ public class Question {
     private long test_id;
     private List<Answer> answerList;
 
-    public Question(long id, String questionText, long test_id, List<Answer> answerList) {
+    public Question(
+            long id,
+            String questionText,
+            long test_id,
+            List<Answer> answerList
+    ) {
         this.id = id;
         this.questionText = questionText;
         this.test_id = test_id;
